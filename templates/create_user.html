@@ -2,17 +2,28 @@
 block content %}
 <h1>Create A User</h1>
 <form class="userform" action="/users/new" , method="POST">
-  <label for="first_name">First Name</label>
-  <input name="first_name" type="text" placeholder="Enter a first name" />
-  <label for="last_name">Last Name</label>
-  <input name="last_name" type="text" placeholder="Enter a last name" />
-  <label for="image_url">Image Url</label>
+  <label class="default-label" for="first_name">First Name</label>
   <input
+    class="default-input"
+    name="first_name"
+    type="text"
+    placeholder="Enter a first name"
+  />
+  <label class="default-label" for="last_name">Last Name</label>
+  <input
+    class="default-input"
+    name="last_name"
+    type="text"
+    placeholder="Enter a last name"
+  />
+  <label class="default-label" for="image_url">Image Url</label>
+  <input
+    class="default-input"
     maxlength="150"
     name="image_url"
     type="text"
     placeholder="Enter a image url"
   />
-  <button class="create_user_btn">Add</button>
+  <button class="create_user_button btn btn-success">Add</button>
 </form>
 {% endblock %}

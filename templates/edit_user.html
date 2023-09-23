@@ -2,22 +2,25 @@
 content %}
 <h1>Edit A User</h1>
 <form class="userform" action="/users/{{user.id}}/edit" , method="POST">
-  <label for="first_name">First Name</label>
+  <label class="default-label" for="first_name">First Name</label>
   <input
+    class="default-input"
     value="{{user.first_name}}"
     name="first_name"
     type="text"
     placeholder="Enter a first name"
   />
-  <label for="last_name">Last Name</label>
+  <label class="default-label" for="last_name">Last Name</label>
   <input
+    class="default-input"
     value="{{user.last_name}}"
     name="last_name"
     type="text"
     placeholder="Enter a last name"
   />
-  <label for="image_url">Image Url</label>
+  <label class="default-label" for="image_url">Image Url</label>
   <input
+    class="default-input"
     maxlength="150"
     value="{{user.image_url}}"
     name="image_url"
@@ -25,8 +28,10 @@ content %}
     placeholder="Enter a image url"
   />
   <a href="/users/{{user.id}}"
-    ><button type="button" class="edit_cancel_btn">Cancel</button></a
+    ><button type="button" class="edit_cancel_btn btn btn-outline-primary">
+      Cancel
+    </button></a
   >
-  <button type="submit" class="edit_add_btn">Save</button>
+  <button type="submit" class="edit_add_btn btn btn-success">Save</button>
 </form>
 {% endblock %}
