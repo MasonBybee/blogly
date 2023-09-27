@@ -2,8 +2,16 @@
 %} {% block content %}
 <h1>{{post.title}}</h1>
 <p>{{post.content}}</p>
-<em>By {{user.first_name}} {{user.last_name}}</em>
+<em>By {{user.first_name}} {{user.last_name}} on {{date}}</em>
 <br />
+<div class="post-tags">
+  <h4 class="post-tags-h4">Tags:</h4>
+  {% for tag in tags %}
+  <a href="/tags/{{tag.id}}"
+    ><button class="btn btn-primary post-tag-buttons">{{tag.name}}</button></a
+  >
+  {% endfor %}
+</div>
 <div class="post-buttons">
   <a href="/users/{{user.id}}"
     ><button class="btn btn-outline-primary">Cancel</button></a

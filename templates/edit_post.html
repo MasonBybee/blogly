@@ -4,17 +4,36 @@ content %}
 <form class="add-post-form" action="/posts/{{post.id}}/edit" method="POST">
   <div class="input-group">
     <label for="title">Title</label>
-    <input class="add-post-title-input" type="text" name="title" />
+    <input
+      class="add-post-title-input"
+      type="text"
+      name="title"
+      value="{{post.title}}"
+    />
   </div>
   <div class="input-group">
     <label for="content">Content</label>
-    <textarea
-      class="add-post-textarea"
-      name="content"
-      rows="3"
-      cols="51"
-    ></textarea>
+    <textarea class="add-post-textarea" name="content" rows="3" cols="51">
+{{post.content}}</textarea
+    >
   </div>
+  {% for tag in tags%} {% if tag in post.tags %}
+  <div class="input-group">
+    <input
+      checked
+      type="checkbox"
+      name="tags"
+      id="tag{{tag.id}}"
+      value="{{tag.id}}"
+    />
+    <label for="tags{{tag.id}}">{{tag.name}}</label>
+  </div>
+  {% else %}
+  <div class="input-group">
+    <input type="checkbox" name="tags" id="tag{{tag.id}}" value="{{tag.id}}" />
+    <label for="tags{{tag.id}}">{{tag.name}}</label>
+  </div>
+  {% endif %} {% endfor %}
   <div class="add-post-buttons">
     <button type="button" class="btn btn-outline-primary">Cancel</button>
     <button type="submit" class="btn btn-success">Add</button>

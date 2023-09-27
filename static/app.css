@@ -50,6 +50,13 @@ img {
   left: 150px;
   bottom: 50px;
 }
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: grey;
+}
 
 .user_details_delete {
   position: absolute;
@@ -70,14 +77,6 @@ img {
 .user_details_add_post {
   display: inline-block;
   position: absolute;
-}
-
-a {
-  text-decoration: none;
-}
-
-body {
-  margin: 10px;
 }
 
 .edit_add_btn {
@@ -118,15 +117,19 @@ body {
   align-items: center;
   margin-bottom: 10px;
 }
+.input-group input {
+  margin-right: 10px;
+}
 
 .input-group label {
-  width: 75px; /* Adjust as needed to control the label width */
-  margin-right: 10px; /* Add spacing between label and input */
+  width: 75px;
+  margin-right: 10px;
   padding-right: 20px;
+  white-space: nowrap;
 }
 
 .add-post-title-input {
-  width: 335px;
+  width: 325px;
 }
 
 .post-buttons {
@@ -136,4 +139,34 @@ body {
 
 .post-buttons form {
   display: inline-block;
+}
+
+.add-tag-buttons {
+  position: absolute;
+  left: 370px;
+}
+
+.tag-buttons {
+  margin-top: 10px;
+  margin-right: 0px;
+  align-self: flex-end;
+  display: inline-block;
+}
+
+.tag-delete-form {
+  display: inline-block;
+}
+
+.post-tag-buttons {
+  display: inline-block;
+  font-size: 0.7em;
+  padding: 3px;
+}
+
+.post-tags-h4 {
+  display: inline-block;
+}
+
+.content-block {
+  margin-left: 10px;
 }

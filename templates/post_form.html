@@ -15,6 +15,12 @@
       cols="51"
     ></textarea>
   </div>
+  {% for tag in tags%}
+  <div class="input-group">
+    <input type="checkbox" name="tags" id="tag{{tag.id}}" value="{{tag.id}}" />
+    <label for="tags{{tag.id}}">{{tag.name}}</label>
+  </div>
+  {% endfor %}
   <div class="add-post-buttons">
     <button type="button" class="btn btn-outline-primary">Cancel</button>
     <button type="submit" class="btn btn-success">Add</button>
