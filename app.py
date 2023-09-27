@@ -168,11 +168,13 @@ def delete_post(post_id):
 
 @app.route("/tags/new")
 def show_tag_form():
+    """Shows new tag form"""
     return render_template("tag_form.html")
 
 
 @app.route("/tags/new", methods=["POST"])
 def create_new_tag():
+    """creates new tag from /tags/new"""
     name = request.form["name"]
     new_tag = Tag(name=name)
     db.session.add(new_tag)
@@ -183,24 +185,28 @@ def create_new_tag():
 
 @app.route("/tags/<int:tag_id>")
 def show_tag_details(tag_id):
+    """shows tag details"""
     tag = Tag.query.get(tag_id)
     return render_template("tag.html", tag=tag)
 
 
 @app.route("/tags")
 def show_tags():
+    """lists all tags"""
     tags = Tag.query.all()
     return render_template("list_tag.html", tags=tags)
 
 
 @app.route("/tags/<int:tag_id>/edit")
 def show_edit_tag(tag_id):
+    """shows edit tag form"""
     tag = Tag.query.get(tag_id)
     return render_template("edit_tag.html", tag=tag)
 
 
 @app.route("/tags/<int:tag_id>/edit", methods=["POST"])
 def edit_tag(tag_id):
+    """edits tag of tag_id"""
     tag_name = request.form["name"]
     tag = Tag.query.get(tag_id)
     tag.name = tag_name
@@ -211,6 +217,7 @@ def edit_tag(tag_id):
 
 @app.route("/tags/<int:tag_id>/delete", methods=["POST"])
 def delete_tag(tag_id):
+    """deletes tag from tag_id"""
     tag = Tag.query.get(tag_id)
     db.session.delete(tag)
     db.session.commit()
